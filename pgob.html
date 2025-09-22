@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja Wohtech</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    #space {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      background: #000;
+      display: block;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 16px;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    header h1 { font-size: 28px; font-weight: bold; }
+    header p { font-size: 16px; }
+
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 6px;
+    }
+    .btn-card {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.45);
+      transition: transform 0.2s ease;
+      padding: 6px 12px;
+      gap: 12px;
+    }
+    .btn-card:hover { transform: scale(1.03); }
+    .btn-card img { width:80px; height:80px; object-fit: cover; border-radius: 12px; }
+
+    .btn-text {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      text-align: left;
+    }
+    .btn-text .title { font-size: 18px; font-weight: bold; }
+    .btn-text .subtitle { font-size: 14px; font-weight: normal; opacity: 0.75; }
+
+    @media (max-width: 480px) {
+      header img { width: 60px; height: 60px; }
+      header h1 { font-size: 20px; }
+      .btn-card img { width: 60px; height: 60px; }
+      .btn-text .title { font-size: 16px; }
+      .btn-text .subtitle { font-size: 12px; }
+    }
+  </style>
+</head>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '853186017379332');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=853186017379332&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+ <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1656747348330083');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1656747348330083&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<body>
+
+  <canvas id="space" aria-hidden="true"></canvas>
+
+  <div class="content">
+    <header>
+      <img src="images/a1.jpeg" alt="Logo">
+      <h1>Loja Dgold</h1>
+      <p><span style="color: #f7a900;"><strong>😍 PARABÉNS PELA SUA COMPRA 🛍️</strong></span></p>
+    </header>
+
+    <div class="btn-container">
+      <a href="https://apps.apple.com/app/id1587451906" target="_blank" class="btn-card">
+        <img src="images/app-store.png" alt="Botão 1">
+        <div class="btn-text">
+          <span class="title">Baixe o App para iPhone</span>
+          <span class="subtitle">Apple Store</span>
+        </div>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.njj.mactivepro&hl=pt_BR&pli=1" target="_blank" class="btn-card">
+        <img src="images/play.png" alt="Botão 2">
+        <div class="btn-text">
+          <span class="title">Baixe o App para Android</span>
+          <span class="subtitle">Play Store</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    /* ===== Fundo Espacial ===== */
+    (function initSpace() {
+      const canvas = document.getElementById('space');
+      const ctx = canvas.getContext('2d');
+      let stars = [];
+      let width, height, dpr;
+      let lastTime = performance.now();
+
+      function resize() {
+        dpr = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        stars = [];
+        const area = width * height;
+        const base = Math.max(60, Math.round(area / 6000));
+        for (let i = 0; i < base; i++) {
+          stars.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            size: Math.random() * 1.6 + 0.3,
+            speed: Math.random() * 60 + 8,
+            twinkle: Math.random() * Math.PI * 2
+          });
+        }
+      }
+
+      function draw(dt) {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let s of stars) {
+          s.x -= s.speed * dt;
+          if (s.x < -4) s.x = width + 4;
+
+          s.twinkle += dt * 3;
+          const alpha = 0.6 + 0.4 * Math.sin(s.twinkle);
+
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+          ctx.shadowBlur = s.size * 2;
+          ctx.shadowColor = 'rgba(255,255,255,0.15)';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      function loop(now) {
+        const dt = Math.min(0.06, (now - lastTime) / 1000);
+        lastTime = now;
+        draw(dt);
+        requestAnimationFrame(loop);
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+      requestAnimationFrame(loop);
+    })();
+  </script>
+</body>
+</html>
